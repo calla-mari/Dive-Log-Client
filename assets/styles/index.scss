@@ -1,1 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: rgb(222, 238, 242);
+  margin: 100px auto 100px auto;
+  text-align: center;
+}
+
+h1 {
+  margin: 0x auto 50px auto;
+}
+
+.mask {
+  display: block;
+  margin: 100px auto 100px auto;
+}
