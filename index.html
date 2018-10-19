@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
       <title>DiveLog</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,38 +16,48 @@
       <img src="https://i.imgur.com/M7tKC63.png" alt="Mask and Fins" class="mask" style="width:500px">
       <h1>Dive Log Application</h1>
       <br />
-    <form id="sign-up-form" class="hidden">
-      <legend>Please sign up below</legend>
-      <input required type="email" name="credentials[email]" placeholder="Email" />
-      <input required type="password" name="credentials[password]" placeholder="Password" />
-      <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"/>
-      <input type="submit" class="btn btn-default" value="Register" />
-    </form>
-    <p id="account" class="hidden existingAcct">Already have an account?  Log in and start logging your dives!</p>
-    <button id="logIn" class="btn btn-default hidden existingAcct" style="background-color: rgb(170, 225, 230)"> Back to Log In </button>
-    <br />
-    <form id="sign-in-form">
-      <legend id="1stStep">Please sign in below </legend>
-      <legned class="hidden" id="2ndStep">Thanks for signing up! Please log in logging your dives!</legned>
-      <input required type="email" name="credentials[email]" placeholder="Email" />
-      <input required type="password" name="credentials[password]" placeholder="Password" />
-      <input type="submit" class="btn btn-default" value="Sign In" />
+      <form id="sign-up-form" class="hidden">
+        <legend>Please sign up below</legend>
+        <input required type="email" name="credentials[email]" placeholder="Email" />
+        <input required type="password" name="credentials[password]" placeholder="Password" />
+        <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"/>
+        <input type="submit" class="btn btn-default" value="Register" />
+      </form>
+      <p id="account" class="hidden existingAcct">Already have an account?  Log in and start logging your dives!</p>
+      <button id="logIn" class="btn btn-default hidden existingAcct user"> Back to Log In </button>
       <br />
-    </form>
-    <p class="newAccount">New User? Please sign up</p>
-    <button class="btn btn-default newAccount" style="background-color: rgb(170, 225, 230)"> Create Account </button>
-    <br />
-    <p id="display-message" class="hidden"></p>
-    <button id="changePass" class="hidden btn btn-default"> Change Password </button>
-    <form id="passChange-form" class="hidden">
-      <legend>Change your password</legend>
-      <input required type="password" name="passwords[old]" placeholder="Old Password" />
-      <input required type="password" name="passwords[new]" placeholder="New Password" />
-      <input type="submit" class="btn btn-default" value="Change Password" />
-    </form>
-    <button id="cancel" class="btn btn-default hidden"> Cancel </button>
-    <br />
-    <button id="logOut" class="hidden btn btn-default"> Log Out </button>
-    <br />
+      <form id="sign-in-form">
+        <legend id="1stStep">Please sign in below </legend>
+        <legned class="hidden" id="2ndStep">Thanks for signing up! Please log in logging your dives!</legned>
+        <input required type="email" name="credentials[email]" placeholder="Email" />
+        <input required type="password" name="credentials[password]" placeholder="Password" />
+        <input type="submit" class="btn btn-default" value="Sign In" />
+        <br />
+      </form>
+      <p class="newAccount">New User? Please sign up</p>
+      <button class="btn btn-default newAccount user"> Create Account </button>
+      <br />
+      <p id="display-message" class="hidden"></p>
+      <form id="passChange-form" class="hidden">
+        <legend>Change your password</legend>
+        <input required type="password" name="passwords[old]" placeholder="Old Password" />
+        <input required type="password" name="passwords[new]" placeholder="New Password" />
+        <input type="submit" class="btn btn-default" value="Change Password" />
+      </form>
+      <button id="cancel" class="btn btn-default hidden"> Cancel </button>
+      <br />
+      <button id="newDives" class="btn btn-default hidden dives1"> Log New Dive! </button>
+      <br />
+      <button id="viewDives" class="btn btn-default hidden dives1"> View All Dives </button>
+      <br />
+      <button id="updateDives" class="btn btn-default hidden dives2"> Update Dives </button>
+      <br />
+      <button id="deleteDives" class="btn btn-default hidden dives2"> Delete a Dive </button>
+      <br />
+      <button id="changePass" class="hidden btn btn-default user"> Change Password </button>
+      <button id="mainMenu" class="hidden btn btn-default user"> Main Menu </button>
+      <button id="logOut" class="hidden btn btn-default"> Log Out </button>
+      <br />
+      <p id="display-alert" class="hidden"></p>
     </body>
 </html>

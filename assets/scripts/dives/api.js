@@ -4,7 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const store = require('../store.js')
 const config = require('../config.js')
 
-const signUp = function (userData) {
+const createDive = function (userData) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',

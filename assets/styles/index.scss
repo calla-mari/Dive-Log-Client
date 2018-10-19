@@ -1,16 +1,39 @@
 @import '~bootstrap/scss/bootstrap';
 
+.hidden {
+  display: none;
+}
+
 body {
   background-color: rgb(222, 238, 242);
-  margin: 100px auto 100px auto;
+  margin: 20px auto 30px auto;
   text-align: center;
+  font-family: 'Dosis', sans-serif;
 }
 
 h1 {
-  margin: 0x auto 50px auto;
+  margin: 0x auto 20px auto;
 }
 
 .mask {
   display: block;
-  margin: 100px auto 100px auto;
+  margin: 100px auto 50px auto;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.user {
+  background-color: rgb(170, 225, 230);
+}
+
+.dives1 {
+  background-color: rgb(28, 173, 228);
+  color: rgb(255, 255, 255);
+}
+
+.dives2 {
+  background-color: rgb(28, 173, 228);
+  color: rgb(255, 255, 255);
 }

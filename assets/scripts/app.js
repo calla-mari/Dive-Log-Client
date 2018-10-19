@@ -9,6 +9,7 @@ const authEvents = require('./auth/events.js')
 // require('./example')
 
 $(() => {
+  // Authentication
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('.newAccount').on('click', authEvents, () => {
     $('#sign-in-form').addClass('hidden')
@@ -18,6 +19,9 @@ $(() => {
     $('#display-message').addClass('hidden')
     $('#sign-up-form').trigger('reset')
     $('#sign-in-form').trigger('reset')
+  })
+  $('#sign-in-form').on('click', authEvents, () => {
+    $('#display-message').addClass('hidden')
   })
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('.existingAcct').on('click', authEvents, () => {
@@ -34,13 +38,50 @@ $(() => {
     $('#passChange-form').removeClass('hidden')
     $('#changePass').addClass('hidden')
     $('#cancel').removeClass('hidden')
-  })
-  $('#changePass').on('click', authEvents, () => {
+    // $('.dives').removeClass('hidden')
+  // })
+  // $('#changePass').on('click', authEvents, () => {
+    // $('#changePass').addClass('hidden')
     $('#display-message').addClass('hidden')
-    $('#changePass').addClass('hidden')
+    $('.dives1').addClass('hidden')
+  })
+  $('#cancel').on('click', authEvents, () => {
+    $('#passChange-form').addClass('hidden')
+    $('#changePass').removeClass('hidden')
+    $('#passChange-form').trigger('reset')
+    $('#cancel').addClass('hidden')
+    $('#display-message').html('Did NOT change password')
+    $('#display-message').css('color', 'red')
+    $('#display-message').removeClass('hidden')
+    $('.dives1').removeClass('hidden')
   })
   $('#logOut').on('click', authEvents.onLogOut)
   $('#logOut').on('click', authEvents, () => {
     $('#passChange-form').trigger('reset')
+    $('.dives1').addClass('hidden')
+    $('.dives2').addClass('hidden')
+  })
+  // User input
+  $('#newDives').on('click', authEvents, () => {
+    $('.dives1').addClass('hidden')
+    $('#changePass').addClass('hidden')
+    $('#logOut').addClass('hidden')
+    $('#mainMenu').removeClass('hidden')
+    $('#display-message').addClass('hidden')
+  })
+  $('#viewDives').on('click', authEvents, () => {
+    $('.dives1').addClass('hidden')
+    $('.dives2').removeClass('hidden')
+    $('#changePass').addClass('hidden')
+    $('#logOut').addClass('hidden')
+    $('#mainMenu').removeClass('hidden')
+    $('#display-message').addClass('hidden')
+  })
+  $('#mainMenu').on('click', authEvents, () => {
+    $('.dives1').removeClass('hidden')
+    $('#changePass').removeClass('hidden')
+    $('#logOut').removeClass('hidden')
+    $('#mainMenu').addClass('hidden')
+    $('.dives2').addClass('hidden')
   })
 })
