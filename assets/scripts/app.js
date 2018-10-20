@@ -62,6 +62,7 @@ $(() => {
     $('.dives').addClass('hidden')
   })
   // User input
+  $('#addDive').on('submit', diveEvents.onNewDives)
   $('#addDiveModal').on('submit', diveEvents.onNewDives)
   $('#addDiveModal').on('click', diveEvents, () => {
     // $('.dives').addClass('hidden')
@@ -73,7 +74,7 @@ $(() => {
     // $('.mask').addClass('small')
   })
   $('#newDives').on('click', authEvents, () => {
-    $('#addDiveModal').attr('aria-hidden', 'false')
+    $('#addDiveForm').attr('aria-hidden', 'false')
   })
   // $('#viewDives').on('click', authEvents, () => {
   //   $('.dives').addClass('hidden')

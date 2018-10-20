@@ -7,8 +7,6 @@ const config = require('../config.js')
 const createDive = function (userData) {
   console.log('create dive')
   console.log(userData)
-  event.preventDefault()
-  debugger
   return $.ajax({
     url: config.apiUrl + '/divelogs',
     headers: {
