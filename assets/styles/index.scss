@@ -4,6 +4,28 @@
   display: none;
 }
 
+.large {
+  display: block;
+  margin: 100px auto 50px auto;
+  width: 500px;
+}
+
+.small {
+  display: block;
+  width: 200px;
+}
+
+.table {
+  display: block;
+  margin: 50px auto;
+  float: none;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: rgba(170, 225, 230, .5
+   );
+}
+
 body {
   background-color: rgb(222, 238, 242);
   margin: 20px auto 30px auto;
@@ -15,11 +37,6 @@ h1 {
   margin: 0x auto 20px auto;
 }
 
-.mask {
-  display: block;
-  margin: 100px auto 50px auto;
-}
-
 .btn {
   margin: 10px;
 }
@@ -28,12 +45,11 @@ h1 {
   background-color: rgb(170, 225, 230);
 }
 
-.dives1 {
+.dives {
   background-color: rgb(28, 173, 228);
   color: rgb(255, 255, 255);
 }
 
-.dives2 {
-  background-color: rgb(28, 173, 228);
-  color: rgb(255, 255, 255);
+.crudIcon {
+  color: rgb(28, 173, 228);
 }

@@ -14,7 +14,10 @@ const signInSuccess = function (response) {
   $('#changePass').removeClass('hidden')
   $('.newAccount').addClass('hidden')
   $('.existingAcct').addClass('hidden')
-  $('.dives1').removeClass('hidden')
+  $('.dives').removeClass('hidden')
+  $('[data-toggle="tooltip"]').tooltip()
+  $('.mask').removeClass('large')
+  $('.mask').addClass('small')
 }
 
 const signInFail = function () {
@@ -51,7 +54,7 @@ const passChangeSuccess = function () {
   $('#display-message').removeClass('hidden')
   $('#passChange-form').addClass('hidden')
   $('#cancel').addClass('hidden')
-  $('.dives1').removeClass('hidden')
+  $('.dives').removeClass('hidden')
 }
 
 const passChangeFail = function () {
@@ -77,8 +80,9 @@ const logOut = function () {
   $('#passChange-form').trigger('reset')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').trigger('reset')
-  $('.dives1').addClass('hidden')
-  $('.dives2').addClass('hidden')
+  $('.dives').addClass('hidden')
+  $('.mask').addClass('large')
+  $('.mask').removeClass('small')
   store.dive = null
 }
 

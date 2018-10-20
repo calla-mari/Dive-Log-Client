@@ -1,6 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events.js')
+const diveEvents = require('./dive/events.js')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -39,11 +40,11 @@ $(() => {
     $('#changePass').addClass('hidden')
     $('#cancel').removeClass('hidden')
     // $('.dives').removeClass('hidden')
-  // })
-  // $('#changePass').on('click', authEvents, () => {
+    // })
+    // $('#changePass').on('click', authEvents, () => {
     // $('#changePass').addClass('hidden')
     $('#display-message').addClass('hidden')
-    $('.dives1').addClass('hidden')
+    $('.dives').addClass('hidden')
   })
   $('#cancel').on('click', authEvents, () => {
     $('#passChange-form').addClass('hidden')
@@ -53,35 +54,42 @@ $(() => {
     $('#display-message').html('Did NOT change password')
     $('#display-message').css('color', 'red')
     $('#display-message').removeClass('hidden')
-    $('.dives1').removeClass('hidden')
+    $('.dives').removeClass('hidden')
   })
   $('#logOut').on('click', authEvents.onLogOut)
   $('#logOut').on('click', authEvents, () => {
     $('#passChange-form').trigger('reset')
-    $('.dives1').addClass('hidden')
-    $('.dives2').addClass('hidden')
+    $('.dives').addClass('hidden')
   })
   // User input
+  $('#addDiveModal').on('submit', diveEvents.onNewDives)
+  $('#addDiveModal').on('click', diveEvents, () => {
+    // $('.dives').addClass('hidden')
+    // $('#changePass').addClass('hidden')
+    // $('#logOut').addClass('hidden')
+    // $('#mainMenu').removeClass('hidden')
+    $('#display-message').addClass('hidden')
+    // $('.mask').removeClass('large')
+    // $('.mask').addClass('small')
+  })
   $('#newDives').on('click', authEvents, () => {
-    $('.dives1').addClass('hidden')
-    $('#changePass').addClass('hidden')
-    $('#logOut').addClass('hidden')
-    $('#mainMenu').removeClass('hidden')
-    $('#display-message').addClass('hidden')
+    $('#addDiveModal').attr('aria-hidden', 'false')
   })
-  $('#viewDives').on('click', authEvents, () => {
-    $('.dives1').addClass('hidden')
-    $('.dives2').removeClass('hidden')
-    $('#changePass').addClass('hidden')
-    $('#logOut').addClass('hidden')
-    $('#mainMenu').removeClass('hidden')
-    $('#display-message').addClass('hidden')
-  })
-  $('#mainMenu').on('click', authEvents, () => {
-    $('.dives1').removeClass('hidden')
-    $('#changePass').removeClass('hidden')
-    $('#logOut').removeClass('hidden')
-    $('#mainMenu').addClass('hidden')
-    $('.dives2').addClass('hidden')
-  })
+  // $('#viewDives').on('click', authEvents, () => {
+  //   $('.dives').addClass('hidden')
+  //   $('#changePass').addClass('hidden')
+  //   $('#logOut').addClass('hidden')
+  //   // $('#mainMenu').removeClass('hidden')
+  //   $('#display-message').addClass('hidden')
+  //   $('.mask').removeClass('large')
+  //   $('.mask').addClass('small')
+  // })
+  // $('#mainMenu').on('click', authEvents, () => {
+  //   $('.dives').removeClass('hidden')
+  //   $('#changePass').removeClass('hidden')
+  //   $('#logOut').removeClass('hidden')
+  //   $('#mainMenu').addClass('hidden')
+  //   $('.mask').addClass('large')
+  //   $('.mask').removeClass('small')
+  // })
 })

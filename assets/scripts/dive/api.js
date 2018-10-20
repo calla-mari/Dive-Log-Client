@@ -5,13 +5,20 @@ const store = require('../store.js')
 const config = require('../config.js')
 
 const createDive = function (userData) {
+  console.log('create dive')
+  console.log(userData)
+  event.preventDefault()
+  debugger
   return $.ajax({
-    url: config.apiUrl + '/sign-up',
+    url: config.apiUrl + '/divelogs',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
     method: 'POST',
     data: userData
   })
 }
-
+/*
 const signIn = function (userData) {
   console.log(userData)
   return $.ajax({
@@ -43,10 +50,10 @@ const logOut = function (passwordData) {
     method: 'DELETE'
   })
 }
-
+*/
 module.exports = {
-  signUp,
-  signIn,
-  passChange,
-  logOut
+  createDive
+  // signIn,
+  // passChange,
+  // logOut
 }
