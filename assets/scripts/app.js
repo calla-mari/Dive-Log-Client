@@ -64,7 +64,6 @@ $(() => {
     $('.dives').addClass('hidden')
   })
   // User input
-  $('#addDive').on('submit', diveEvents.onNewDives)
   $('#addDiveForm').on('submit', diveEvents.onNewDives)
   $('#addDiveForm').on('click', diveEvents, () => {
     // $('.dives').addClass('hidden')
