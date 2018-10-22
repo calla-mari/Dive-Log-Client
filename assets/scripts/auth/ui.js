@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store.js')
+const api = require('./api.js')
 
 const signInSuccess = function (response) {
   $('#display-message').html('Welcome! Please choose what you would like to do.')

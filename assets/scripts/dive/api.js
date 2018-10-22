@@ -31,42 +31,34 @@ const createDive = function (userData) {
     }
   })
 }
-/*
-const signIn = function (userData) {
+
+const editDive = function (userData) {
   console.log(userData)
   return $.ajax({
-    url: config.apiUrl + '/sign-in',
-    method: 'POST',
-    data: userData
-  })
-}
-
-const passChange = function (passwordData) {
-  console.log(passwordData)
-  return $.ajax({
-    url: config.apiUrl + '/change-password',
+    url: config.apiUrl + `/divelogs/${userData.divelog.id}`,
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
     method: 'PATCH',
-    data: passwordData
+    data: userData
   })
 }
 
-const logOut = function (passwordData) {
-  console.log(passwordData)
+const deleteDive = function (userData) {
   return $.ajax({
-    url: config.apiUrl + '/sign-out',
+    url: config.apiUrl + '/divelogs',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
     method: 'DELETE'
   })
 }
-*/
+
 module.exports = {
   createDive,
-  showDive
+  showDive,
+  editDive,
+  deleteDive
   // signIn,
   // passChange,
   // logOut

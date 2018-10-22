@@ -39,10 +39,6 @@ $(() => {
     $('#passChange-form').removeClass('hidden')
     $('#changePass').addClass('hidden')
     $('#cancel').removeClass('hidden')
-    // $('.dives').removeClass('hidden')
-    // })
-    // $('#changePass').on('click', authEvents, () => {
-    // $('#changePass').addClass('hidden')
     $('#display-message').addClass('hidden')
     $('.dives').addClass('hidden')
     $('.container').addClass('hidden')
@@ -65,13 +61,8 @@ $(() => {
   })
   // User input
   $('#addDiveForm').on('submit', diveEvents.onNewDives)
-  $('#addDiveForm').on('click', diveEvents, () => {
-    // $('.dives').addClass('hidden')
-    // $('#changePass').addClass('hidden')
-    // $('#logOut').addClass('hidden')
-    // $('#mainMenu').removeClass('hidden')
-    $('#display-message').addClass('hidden')
-    // $('.mask').removeClass('large')
-    // $('.mask').addClass('small')
-  })
+
+  $('#editDiveForm').on('submit', diveEvents.onEditDives)
+
+  $('#deleteDiveForm').on('click', diveEvents.onDeleteDives)
 })

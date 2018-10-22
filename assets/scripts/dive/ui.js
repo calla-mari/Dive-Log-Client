@@ -5,7 +5,8 @@ const showDivesTemplate = require('../templates/helpers/dive-list.handlebars')
 
 const showDivesSuccess = function (userData) {
   // show all dives on main page
-  const showDivesHtml = showDivesTemplate({ divelogs: userData.divelog })
+  console.log(userData)
+  const showDivesHtml = showDivesTemplate({ divelogs: store.user.diveLogs })
   console.log(showDivesHtml)
   $('.content').html(showDivesHtml)
 }
@@ -16,8 +17,13 @@ const newDiveSuccess = function (diveLog) {
   $('#display-message').html('New dive created')
   $('#display-message').css('color', 'green')
   $('#display-message').removeClass('hidden')
-  $('.Modal').addClass('hidden')
+  // $('#addDiveModal').addClass('hidden')
+  // $('#addDiveModal').removeClass('fade')
+  // $('.modal').addClass('hidden')
   $('#addDiveForm').trigger('reset')
+  $('#addDiveModal').modal('toggle')
+
+  // $('#addDiveModal').attr('aria-hidden', 'true')
 
   // store.user = diveLog.userId;
 
@@ -42,6 +48,22 @@ const newDiveSuccess = function (diveLog) {
   // $('#addDiveModal').attr('aria-hidden', 'false')
 }
 
+const editDiveSuccess = function (diveLog) {
+  console.log('dive success')
+  console.log('diveLog', diveLog)
+  $('#display-message').html('Dive sucessfully edited')
+  $('#display-message').css('color', 'green')
+  $('#display-message').removeClass('hidden')
+  $('#editDiveModal').modal('toggle')
+}
+
+const deleteDiveSuccess = function () {
+  $('#display-message').html('Sucessfully deleted the dive')
+  $('#display-message').css('color', 'green')
+  $('#display-message').removeClass('hidden')
+  $('#editDiveModal').modal('toggle')
+}
+
 const Fail = function () {
   $('#display-message').html('Something went wrong, Please try again')
   $('#display-message').css('color', 'red')
@@ -51,5 +73,7 @@ const Fail = function () {
 module.exports = {
   newDiveSuccess,
   showDivesSuccess,
+  editDiveSuccess,
+  deleteDiveSuccess,
   Fail
 }
