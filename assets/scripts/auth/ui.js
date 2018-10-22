@@ -7,6 +7,8 @@ const signInSuccess = function (response) {
   $('#display-message').css('color', 'green')
   $('#display-message').removeClass('hidden')
   $('#sign-in-form').trigger('reset')
+  console.log('signing in!')
+  console.log(response)
   store.user = response.user
   $('#sign-in-form').addClass('hidden')
   $('#sign-up-form').addClass('hidden')
@@ -18,6 +20,7 @@ const signInSuccess = function (response) {
   $('[data-toggle="tooltip"]').tooltip()
   $('.mask').removeClass('large')
   $('.mask').addClass('small')
+  $('.container').removeClass('hidden')
 }
 
 const signInFail = function () {
@@ -83,6 +86,7 @@ const logOut = function () {
   $('.dives').addClass('hidden')
   $('.mask').addClass('large')
   $('.mask').removeClass('small')
+  $('.container').addClass('hidden')
   store.dive = null
 }
 

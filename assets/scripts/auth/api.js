@@ -13,7 +13,6 @@ const signUp = function (userData) {
 }
 
 const signIn = function (userData) {
-  console.log(userData)
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
@@ -22,7 +21,6 @@ const signIn = function (userData) {
 }
 
 const passChange = function (passwordData) {
-  console.log(passwordData)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     headers: {
@@ -34,7 +32,6 @@ const passChange = function (passwordData) {
 }
 
 const logOut = function (passwordData) {
-  console.log(passwordData)
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     headers: {

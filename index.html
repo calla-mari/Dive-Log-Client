@@ -68,7 +68,7 @@
           </tbody>
         </table>
       </div> -->
-      <div class="container">
+      <div class="container hidden">
         <div class="table-wrapper">
           <div class="table-title">
             <div class="row">
@@ -80,7 +80,8 @@
               </div>
             </div>
           </div>
-          <table class="table table-striped table-hover">
+        <div class="content">
+          <!-- <table class="table table-striped table-hover">
             <thead>
               <tr>
                 <th>City</th>
@@ -89,7 +90,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="content">
                 <td></td>
                 <td></td>
                 <td></td>
@@ -99,7 +100,7 @@
                 </td>
               </tr>
             </tbody>
-          </table>
+          </table> -->
         <!-- <div class="clearfix">
           <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
             <ul class="pagination">
@@ -115,51 +116,6 @@
         </div>
       </div>
       <!-- Edit Modal HTML -->
-      <!-- <div class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <form id="addDiveModal">
-              <div class="modal-header">
-                <h4 class="modal-title">Add Dive</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <div class="form-group">
-                  <label>City</label>
-                  <input type="text" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label>Country</label>
-                  <input type="text" class="form-control" required>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"></button>
-                <button type="submit" class="btn btn-defualt dives" value="Add"></button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div> -->
-      <!-- <div class="modal fade">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Add Dive</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <form id="addDiveModal">
-                  <input type="text" class="form-control" required />
-                  <input type="text" class="form-control" required />
-                  <button type="submit" class="btn btn-defualt dives" value="Add"></button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <div id="addDiveModal" class="modal fade">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -171,11 +127,11 @@
               <div class="modal-body">
                 <div class="form-group">
                   <label>City</label>
-                  <input type="text" class="form-control" required>
+                  <input type="text" name="divelog[city]" class="form-control" required>
                 </div>
                 <div class="form-group">
                   <label>Country</label>
-                  <input type="text" class="form-control" required>
+                  <input type="text" name="divelog[country]" class="form-control" required>
                 </div>
               </div>
               <div class="modal-footer">
@@ -247,10 +203,5 @@
       <button id="logOut" class="hidden btn btn-default"> Log Out </button>
       <br />
       <p id="display-alert" class="hidden"></p>
-      <form id="addDive">
-        <input id="city" required placeholder="City" name="divelog[city]" type="text"/>
-        <input id="country" required placeholder="Country" name="divelog[country]" type="text"/>
-        <button type="submit" class="btn btn-default dives">Add Dive</button>
-      </form>
     </body>
 </html>

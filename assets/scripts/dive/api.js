@@ -4,16 +4,31 @@ const getFormFields = require('../../../lib/get-form-fields')
 const store = require('../store.js')
 const config = require('../config.js')
 
+const showDive = function (userData) {
+  return $.ajax({
+    url: config.apiUrl + '/divelogs',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    method: 'GET',
+    data: {
+      userId: store.user.id,
+      divelog: userData.divelog
+    }
+  })
+}
+
 const createDive = function (userData) {
-  console.log('create dive')
-  console.log(userData)
   return $.ajax({
     url: config.apiUrl + '/divelogs',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
     method: 'POST',
-    data: userData
+    data: {
+      userId: store.user.id,
+      divelog: userData.divelog
+    }
   })
 }
 /*
@@ -50,7 +65,8 @@ const logOut = function (passwordData) {
 }
 */
 module.exports = {
-  createDive
+  createDive,
+  showDive
   // signIn,
   // passChange,
   // logOut

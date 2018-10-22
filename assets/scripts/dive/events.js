@@ -8,6 +8,7 @@ const onNewDives = function (event) {
   console.log('onNewDives')
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.createDive(data)
     .then(ui.newDiveSuccess)
     .catch(ui.Fail)

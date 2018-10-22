@@ -45,6 +45,7 @@ $(() => {
     // $('#changePass').addClass('hidden')
     $('#display-message').addClass('hidden')
     $('.dives').addClass('hidden')
+    $('.container').addClass('hidden')
   })
   $('#cancel').on('click', authEvents, () => {
     $('#passChange-form').addClass('hidden')
@@ -55,6 +56,7 @@ $(() => {
     $('#display-message').css('color', 'red')
     $('#display-message').removeClass('hidden')
     $('.dives').removeClass('hidden')
+    $('.container').removeClass('hidden')
   })
   $('#logOut').on('click', authEvents.onLogOut)
   $('#logOut').on('click', authEvents, () => {
@@ -63,8 +65,8 @@ $(() => {
   })
   // User input
   $('#addDive').on('submit', diveEvents.onNewDives)
-  $('#addDiveModal').on('submit', diveEvents.onNewDives)
-  $('#addDiveModal').on('click', diveEvents, () => {
+  $('#addDiveForm').on('submit', diveEvents.onNewDives)
+  $('#addDiveForm').on('click', diveEvents, () => {
     // $('.dives').addClass('hidden')
     // $('#changePass').addClass('hidden')
     // $('#logOut').addClass('hidden')
@@ -73,24 +75,4 @@ $(() => {
     // $('.mask').removeClass('large')
     // $('.mask').addClass('small')
   })
-  $('#newDives').on('click', authEvents, () => {
-    $('#addDiveForm').attr('aria-hidden', 'false')
-  })
-  // $('#viewDives').on('click', authEvents, () => {
-  //   $('.dives').addClass('hidden')
-  //   $('#changePass').addClass('hidden')
-  //   $('#logOut').addClass('hidden')
-  //   // $('#mainMenu').removeClass('hidden')
-  //   $('#display-message').addClass('hidden')
-  //   $('.mask').removeClass('large')
-  //   $('.mask').addClass('small')
-  // })
-  // $('#mainMenu').on('click', authEvents, () => {
-  //   $('.dives').removeClass('hidden')
-  //   $('#changePass').removeClass('hidden')
-  //   $('#logOut').removeClass('hidden')
-  //   $('#mainMenu').addClass('hidden')
-  //   $('.mask').addClass('large')
-  //   $('.mask').removeClass('small')
-  // })
 })

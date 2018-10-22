@@ -1,20 +1,30 @@
-{{#each divelogs as |divelog|}}
-  {{log divelog}}
-  <!-- {{> partial}}
-  Don't uncomment yet -->
 
   <div>
-    <h1 data-id="{{divelog.id}}"> <small>Country: {{divelog.country}}</small></h1>
     <section data-id="{{divelog.id}}">
-      <p>{{#if divelog.user}}
-          {{divelog.user}}
-        {{else}}
-          No author provided.
-        {{/if}}
-      </p>
-      <br />
-      <button type="submit" class="btn btn-default">Remove</button>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Country</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each divelogs as |divelog|}}
+          <tr class="content">
+            {{log divelog}}
+            <!-- {{> partial}}
+            Don't uncomment yet -->
+            {{log  this}}
+            <td>{{divelog.city}}</td>
+            <td>{{divelog.country}}</td>
+            <td>
+              <a href="#editDiveModal" class="edit crudIcon" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+              <a href="#deleteDiveModal" class="delete crudIcon" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </section>
   </div>
-
-{{/each}}
