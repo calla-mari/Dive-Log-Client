@@ -1,4 +1,4 @@
-[![Mask and Fins]](https://imgur.com/a/kj6EFLA)
+[![Mask and Fins](https://imgur.com/a/kj6EFLA)]
 
 # Dive Log Application Client
 
@@ -40,16 +40,12 @@ The process stared with planning a user story and ERD, then the wireframe just f
 
 ## Dive Log Client
 
-Website
-[Client](https://calla-mari.github.io/Dive-Log-Client/)
+[Client Website](https://calla-mari.github.io/Dive-Log-Client/)
 
-Repository
-[Client](https://github.com/calla-mari/Dive-Log-Client)
+[Client Repository](https://github.com/calla-mari/Dive-Log-Client)
 
 ## Dive Log Server
 
-Website
-[Server](https://dive-log-server.herokuapp.com/)
+[Server Website](https://dive-log-server.herokuapp.com/)
 
-Repository
-[Server](https://github.com/calla-mari/Dive-Log-Server)
+[Server Repository](https://github.com/calla-mari/Dive-Log-Server)
