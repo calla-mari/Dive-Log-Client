@@ -5,11 +5,9 @@ const api = require('./api.js')
 
 const signInSuccess = function (response) {
   $('#display-message').html('Welcome! Please choose what you would like to do.')
-  $('#display-message').css('color', 'green')
+  $('#display-message').css('color', 'rgb(28, 173, 228)')
   $('#display-message').removeClass('hidden')
   $('#sign-in-form').trigger('reset')
-  console.log('signing in!')
-  console.log(response)
   store.user = response.user
   $('#sign-in-form').addClass('hidden')
   $('#sign-up-form').addClass('hidden')
@@ -33,7 +31,7 @@ const signInFail = function () {
 
 const signUpSuccess = function () {
   $('#display-message').html('Thank you for signing up! Please sign in to start loggin dives')
-  $('#display-message').css('color', 'green')
+  $('#display-message').css('color', 'rgb(28, 173, 228)')
   $('#display-message').removeClass('hidden')
   $('#sign-up-form').trigger('reset')
   $('#sign-in-form').removeClass('hidden')
@@ -52,7 +50,7 @@ const signUpFail = function () {
 
 const passChangeSuccess = function () {
   $('#display-message').html('Password Changed!')
-  $('#display-message').css('color', 'green')
+  $('#display-message').css('color', 'rgb(28, 173, 228)')
   $('#passChange-form').trigger('reset')
   $('#changePass').removeClass('hidden')
   $('#display-message').removeClass('hidden')
@@ -77,7 +75,7 @@ const logOut = function () {
   $('#1stStep').removeClass('hidden')
   $('#2ndStep').addClass('hidden')
   $('#display-message').html('Sucessfully Logged Out!')
-  $('#display-message').css('color', 'green')
+  $('#display-message').css('color', 'rgb(28, 173, 228)')
   $('#display-message').removeClass('hidden')
   $('.newAccount').removeClass('hidden')
   $('#cancel').addClass('hidden')

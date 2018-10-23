@@ -6,7 +6,6 @@ const ui = require('./ui.js')
 const store = require('../store.js')
 
 const onShowDives = function (event) {
-  console.log('showDIve is' + event.target)
   event.preventDefault()
   const data = getFormFields(event.target)
   api.showDive(data)
@@ -24,13 +23,8 @@ const onNewDives = function (event) {
 }
 
 const onEditDives = function (event) {
-  console.log('onEditDives')
-  console.log(event)
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(event.target)
-  console.log(event.target.id)
-  console.log(event.target.parentNode.id)
   api.editDive(data)
     .then(api.showDive)
     .then(ui.showDiveSuccess)
@@ -39,12 +33,15 @@ const onEditDives = function (event) {
 }
 
 const onDeleteDives = function (event) {
-  console.log('onDeleteDives')
   event.preventDefault()
-
-  api.deleteDive(diveId)
-    .then(ui.deleteDiveSuccess)
-    .catch(ui.Fail)
+  const id = $(event.target).parent().data('id')
+  if (confirm('Are you sure?')) {
+    api.deleteDive(id)
+      .then(api.showDive)
+      .then(ui.showDiveSuccess)
+      .then(ui.deleteDiveSuccess)
+      .catch(ui.Fail)
+  }
 }
 
 module.exports = {

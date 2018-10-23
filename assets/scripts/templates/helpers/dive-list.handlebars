@@ -14,16 +14,12 @@
             <section data-id="{{divelog.id}}">
 
               <tr class="content">
-                <!-- {{log divelog.id}} -->
-                <!-- {{> partial}}
-                Don't uncomment yet -->
-                <!-- {{log  this}} -->
                 <td id="{{divelog.id}}">{{divelog.id}}</td>
                 <td id="city">{{divelog.city}}</td>
                 <td id="country">{{divelog.country}}</td>
                 <td>
                   <a href="#editDiveModal" class="edit crudIcon" id="edit-{{divelog.id}}" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                  <a href="#deleteDiveModal" class="delete crudIcon" id="delete-{{divelog.id}}" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                  <a class="delete crudIcon btn" id="delete-{{divelog.id}}" data-id="{{divelog.id}}"><i class="material-icons" data-toggle="tooltip" title="Delete" style="color:rgb(28, 173, 228);">&#xE872;</i></a>
                 </td>
               </tr>
             </section>

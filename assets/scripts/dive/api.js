@@ -5,7 +5,6 @@ const store = require('../store.js')
 const config = require('../config.js')
 
 const showDive = function (userData) {
-  console.log(userData)
   return $.ajax({
     url: config.apiUrl + '/divelogs',
     headers: {
@@ -35,7 +34,6 @@ const createDive = function (userData) {
 }
 
 const editDive = function (userData) {
-  console.log(userData)
   return $.ajax({
     url: config.apiUrl + `/divelogs/${userData.divelog.id}`,
     headers: {
@@ -47,7 +45,6 @@ const editDive = function (userData) {
 }
 
 const deleteDive = function (diveId) {
-  console.log(diveId)
   return $.ajax({
     url: config.apiUrl + `/divelogs/${diveId}`,
     headers: {

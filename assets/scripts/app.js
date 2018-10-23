@@ -63,14 +63,25 @@ $(() => {
   $('#allDives').on('click', diveEvents.onShowDives)
   $('#addDiveForm').on('submit', diveEvents.onNewDives)
   $('#editDiveForm').on('submit', diveEvents.onEditDives)
-  $('.edit.crudIcon').on('click', authEvents, () => {
-    const diveId = $(event.target).closest('section').attr('id')
-    console.log(diveId)
-  })
+  // $('.edit.crudIcon').on('click', authEvents, () => {
+  //   const diveId = $(event.target).closest('section').attr('id')
+  //   console.log(diveId)
+  // })
   // deltedivemodal  sotre data id on even handler look up data id when its clicked
-  $('#deleteDiveForm').on('submit', diveEvents.onDeleteDives)
-  $('.delete.crudIcon').on('click', authEvents, () => {
-    const diveId = $(event.target).closest('section').attr('id')
-    console.log(diveId)
+  $('.content').on('click', '.delete', diveEvents.onDeleteDives)
+  $('.content').on('click', authEvents, () => {
+    $('#diveMessage').addClass('hidden')
+    $('#display-message').addClass('hidden')
+  })
+  $('.crudIcon').on('click', authEvents, () => {
+    $('#diveMessage').addClass('hidden')
+  })
+  $('#newDives').on('click', authEvents, () => {
+    $('#diveMessage').addClass('hidden')
+    $('#display-message').addClass('hidden')
+  })
+  $('#allDives').on('click', authEvents, () => {
+    $('#diveMessage').addClass('hidden')
+    $('#display-message').addClass('hidden')
   })
 })
