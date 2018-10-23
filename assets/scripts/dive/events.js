@@ -35,7 +35,7 @@ const onEditDives = function (event) {
 const onDeleteDives = function (event) {
   event.preventDefault()
   const id = $(event.target).parent().data('id')
-  if (confirm('Are you sure?')) {
+  if (confirm('Are you sure you want to delete this dive?')) {
     api.deleteDive(id)
       .then(api.showDive)
       .then(ui.showDiveSuccess)

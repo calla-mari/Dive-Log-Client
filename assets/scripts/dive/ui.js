@@ -15,7 +15,7 @@ const showDiveSuccess = function (diveLog) {
 
 const newDiveSuccess = function (diveLog) {
   // this is not a diveLog, this is a divelog
-  $('#diveMessage').html('New dive created')
+  $('#diveMessage').html('New dive created this session!')
   $('#diveMessage').css('color', 'rgb(28, 173, 228)')
   $('#diveMessage').removeClass('hidden')
   $('#addDiveForm').trigger('reset')
