@@ -5,10 +5,8 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 const onShowDives = function (event) {
-  console.log('onShowDives')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.showDive(data)
     // .then(console.log)
     .then(ui.showDiveSuccess)
@@ -16,10 +14,8 @@ const onShowDives = function (event) {
 }
 
 const onNewDives = function (event) {
-  console.log('onNewDives')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.createDive(data)
     .then(ui.newDiveSuccess)
     .catch(ui.Fail)
@@ -29,22 +25,25 @@ const onEditDives = function (event) {
   console.log('onEditDives')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.editDive(data)
-    .then(onShowDives)
+    .then(api.showDive)
+    .then(ui.showDiveSuccess)
+    .then(ui.editDiveSuccess)
     .catch(ui.Fail)
 }
 
 const onDeleteDives = function (event) {
   console.log('onDeleteDives')
   event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
-  if (confirm('Are you sure?')) {
-    api.deleteDive(data)
-      .then(ui.deleteDiveSuccess)
-      .catch(ui.Fail)
-  }
+  console.log(event)
+  // console.log($(event.target))
+  // console.log($(event.target).closest('tr'))
+  // console.log($(event.target).closest('tr').find('#id'))
+  const diveId = $(event.target).closest('tr').find('#id').text()
+  console.log(diveId)
+  api.deleteDive(diveId)
+    .then(ui.deleteDiveSuccess)
+    .catch(ui.Fail)
 }
 
 module.exports = {

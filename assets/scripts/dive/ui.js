@@ -5,10 +5,8 @@ const showDivesTemplate = require('../templates/helpers/dive-list.handlebars')
 
 const showDiveSuccess = function (diveLog) {
   const dives = diveLog.divelogs.filter(n => n.editable)
-  console.log(dives)
   // show all dives on main page
   const showDivesHtml = showDivesTemplate({ divelogs: dives })
-  console.log(showDivesHtml)
   $('.content').html(showDivesHtml)
 }
 
@@ -46,9 +44,8 @@ const newDiveSuccess = function (diveLog) {
   // $('#addDiveModal').attr('aria-hidden', 'false')
 }
 
-const editDiveSuccess = function (diveLog) {
+const editDiveSuccess = () => {
   console.log('dive success')
-  console.log('diveLog', diveLog)
   $('#display-message').html('Dive sucessfully edited')
   $('#display-message').css('color', 'green')
   $('#display-message').removeClass('hidden')

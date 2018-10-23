@@ -46,9 +46,9 @@ const editDive = function (userData) {
   })
 }
 
-const deleteDive = function (userData) {
+const deleteDive = function (diveId) {
   return $.ajax({
-    url: config.apiUrl + '/divelogs',
+    url: config.apiUrl + `/divelogs/${diveId}`,
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
