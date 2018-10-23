@@ -9,7 +9,8 @@ const onShowDives = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log(data)
-  api.editDive(data)
+  api.showDive(data)
+    // .then(console.log)
     .then(ui.showDiveSuccess)
     .catch(ui.Fail)
 }
@@ -30,7 +31,7 @@ const onEditDives = function (event) {
   const data = getFormFields(event.target)
   console.log(data)
   api.editDive(data)
-    .then(ui.editDiveSuccess)
+    .then(onShowDives)
     .catch(ui.Fail)
 }
 

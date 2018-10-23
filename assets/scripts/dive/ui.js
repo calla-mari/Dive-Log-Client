@@ -3,10 +3,11 @@
 const store = require('../store.js')
 const showDivesTemplate = require('../templates/helpers/dive-list.handlebars')
 
-const showDivesSuccess = function (userData) {
+const showDiveSuccess = function (diveLog) {
+  const dives = diveLog.divelogs.filter(n => n.editable)
+  console.log(dives)
   // show all dives on main page
-  console.log(userData)
-  const showDivesHtml = showDivesTemplate({ divelogs: store.user.diveLogs })
+  const showDivesHtml = showDivesTemplate({ divelogs: dives })
   console.log(showDivesHtml)
   $('.content').html(showDivesHtml)
 }
@@ -17,9 +18,6 @@ const newDiveSuccess = function (diveLog) {
   $('#display-message').html('New dive created')
   $('#display-message').css('color', 'green')
   $('#display-message').removeClass('hidden')
-  // $('#addDiveModal').addClass('hidden')
-  // $('#addDiveModal').removeClass('fade')
-  // $('.modal').addClass('hidden')
   $('#addDiveForm').trigger('reset')
   $('#addDiveModal').modal('toggle')
 
@@ -72,7 +70,7 @@ const Fail = function () {
 
 module.exports = {
   newDiveSuccess,
-  showDivesSuccess,
+  showDiveSuccess,
   editDiveSuccess,
   deleteDiveSuccess,
   Fail

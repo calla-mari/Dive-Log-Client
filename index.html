@@ -47,27 +47,13 @@
       </form>
       <button id="cancel" class="btn btn-default hidden"> Cancel </button>
       <br />
+      <button id="changePass" class="hidden btn btn-default user"> Change Password </button>
+      <!-- <button id="mainMenu" class="hidden btn btn-default user"> Main Menu </button> -->
+      <button id="logOut" class="hidden btn btn-default"> Log Out </button>
+      <br />
+      <p id="display-alert" class="hidden"></p>
+      <br />
       <div class="container">
-      <!-- <div class="diveTable container-fluid">
-        <table class="table table-hover table-responsive table-striped">
-          <thead>
-            <tr>
-              <th>Dive ID</th>
-              <th>City</th>
-              <th>Country</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>add row</td>
-            </tr>
-          </tbody>
-        </table>
-      </div> -->
       <div class="container hidden">
         <div class="table-wrapper">
           <div class="table-title">
@@ -77,6 +63,8 @@
               </div>
               <div class="col-sm-6">
                 <a href="#addDiveModal" class="btn btn-default dives" id="newDives" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Log a Dive</span></a>
+                <a href="#allDiveModal" class="btn btn-default user" id="allDives" data-toggle="modal"><span>Show all Dives</span></a>
+                <a href="#findDiveModal" class="btn btn-default user" id="findDives" data-toggle="modal"><span>Find a Dive</span></a>
               </div>
             </div>
           </div>
@@ -194,18 +182,6 @@
           </div>
         </div>
       </div>
-      <!-- <button id="newDives" class="btn btn-default hidden dives1"> Log New Dive! </button>
       <br />
-      <button id="viewDives" class="btn btn-default hidden dives1"> View All Dives </button>
-      <br />
-      <button id="updateDives" class="btn btn-default hidden dives2"> Update Dives </button>
-      <br />
-      <button id="deleteDives" class="btn btn-default hidden dives2"> Delete a Dive </button> -->
-      <br />
-      <button id="changePass" class="hidden btn btn-default user"> Change Password </button>
-      <!-- <button id="mainMenu" class="hidden btn btn-default user"> Main Menu </button> -->
-      <button id="logOut" class="hidden btn btn-default"> Log Out </button>
-      <br />
-      <p id="display-alert" class="hidden"></p>
     </body>
 </html>

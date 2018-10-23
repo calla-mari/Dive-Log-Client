@@ -5,15 +5,17 @@ const store = require('../store.js')
 const config = require('../config.js')
 
 const showDive = function (userData) {
+  console.log(userData)
   return $.ajax({
     url: config.apiUrl + '/divelogs',
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
     method: 'GET',
+    // data: userData
     data: {
-      userId: store.user.id,
-      divelog: userData.divelog
+      userId: store.user.id
+      // divelog: userData.divelog
     }
   })
 }
