@@ -8,40 +8,36 @@ const showDiveSuccess = function (diveLog) {
   // show all dives on main page
   const showDivesHtml = showDivesTemplate({ divelogs: dives })
   $('.content').html(showDivesHtml)
+  store.diveLogs = dives
+  console.log(store.diveLogs)
 }
 
 const newDiveSuccess = function (diveLog) {
   // this is not a diveLog, this is a divelog
-  console.log('diveLog', diveLog)
+  // console.log('diveLog', diveLog)
   $('#display-message').html('New dive created')
   $('#display-message').css('color', 'green')
   $('#display-message').removeClass('hidden')
   $('#addDiveForm').trigger('reset')
   $('#addDiveModal').modal('toggle')
 
-  // $('#addDiveModal').attr('aria-hidden', 'true')
-
-  // store.user = diveLog.userId;
-
   // you are overwriting your data Incorrectly
-  console.group('Incorrect data storing')
-  console.log(store.user)
+  // console.group('Incorrect data storing')
+  // console.log(store.user)
   if (!store.user.diveLogs) {
     store.user.diveLogs = []
   }
-  // store.user.diveLogs.push(diveLog.divelog)
   store.user.diveLogs.push(diveLog.divelog)
 
-  console.log(diveLog.divelog)
+  // console.log(diveLog.divelog)
   const showDivesHtml = showDivesTemplate({divelogs: store.user.diveLogs})
-  console.groupEnd('Incorrect data storing')
+  // console.groupEnd('Incorrect data storing')
   // $('')
   // show new dive appended
-  console.log(showDivesHtml)
+  // console.log(showDivesHtml)
   $('.content').html(showDivesHtml)
 
   // $('.table').append(store.user.divelogs)
-  // $('#addDiveModal').attr('aria-hidden', 'false')
 }
 
 const editDiveSuccess = () => {

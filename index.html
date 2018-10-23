@@ -64,7 +64,6 @@
               <div class="col-sm-6">
                 <a href="#addDiveModal" class="btn btn-default dives" id="newDives" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Log a Dive</span></a>
                 <a href="#allDiveModal" class="btn btn-default user" id="allDives" data-toggle="modal"><span>Show all Dives</span></a>
-                <a href="#findDiveModal" class="btn btn-default user" id="findDives" data-toggle="modal"><span>Find a Dive</span></a>
               </div>
             </div>
           </div>
@@ -144,14 +143,16 @@
                   <label>Id</label>
                   <input type="text" name="divelog[id]" class="form-control" required>
                 </div>
-                <div class="form-group">
-                  <label>City</label>
-                  <input type="text" name="divelog[city]" class="form-control" required>
-                </div>
-                <div class="form-group">
-                  <label>Country</label>
-                  <input type="text" name="divelog[country]" class="form-control" required>
-                </div>
+                <section>
+                  <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="divelog[city]" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" name="divelog[country]" class="form-control" required>
+                  </div>
+              </section>
               </div>
               <div class="modal-footer">
                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -171,7 +172,11 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">
-                <p>Are you sure you want to delete this Dive?</p>
+                <p>Are you sure you want to delete A Dive?</p>
+                <div class="form-group">
+                  <label>Id</label>
+                  <input type="text" name="divelog[id]" class="form-control" required>
+                </div>
                 <p class="text-warning"><small>This action cannot be undone.</small></p>
               </div>
               <div class="modal-footer">

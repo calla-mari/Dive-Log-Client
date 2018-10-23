@@ -1,10 +1,9 @@
 
   <div>
-    <section data-id="{{divelog.id}}">
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>City</th>
             <th>Country</th>
             <th></th>
@@ -12,22 +11,23 @@
         </thead>
         <tbody>
           {{#each divelogs as |divelog|}}
-          <!-- <h4 data-id="{{divelog.id}}"> <small> City: {{divelog.city}}</small> <small> Country: {{divelog.country}}</small></h4> -->
-          <tr class="content">
-            <!-- {{log divelog}} -->
-            <!-- {{> partial}}
-            Don't uncomment yet -->
-            <!-- {{log  this}} -->
-            <td id="id">{{divelog.id}}</td>
-            <td id="city">{{divelog.city}}</td>
-            <td id="country">{{divelog.country}}</td>
-            <td>
-              <a href="#editDiveModal" class="edit crudIcon" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-              <a href="#deleteDiveModal" class="delete crudIcon" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-            </td>
-          </tr>
+            <section data-id="{{divelog.id}}">
+
+              <tr class="content">
+                <!-- {{log divelog.id}} -->
+                <!-- {{> partial}}
+                Don't uncomment yet -->
+                <!-- {{log  this}} -->
+                <td id="{{divelog.id}}">{{divelog.id}}</td>
+                <td id="city">{{divelog.city}}</td>
+                <td id="country">{{divelog.country}}</td>
+                <td>
+                  <a href="#editDiveModal" class="edit crudIcon" id="edit-{{divelog.id}}" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                  <a href="#deleteDiveModal" class="delete crudIcon" id="delete-{{divelog.id}}" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                </td>
+              </tr>
+            </section>
           {{/each}}
         </tbody>
       </table>
-    </section>
   </div>

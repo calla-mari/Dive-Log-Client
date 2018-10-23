@@ -3,8 +3,10 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store.js')
 
 const onShowDives = function (event) {
+  console.log('showDIve is' + event.target)
   event.preventDefault()
   const data = getFormFields(event.target)
   api.showDive(data)
@@ -23,8 +25,12 @@ const onNewDives = function (event) {
 
 const onEditDives = function (event) {
   console.log('onEditDives')
+  console.log(event)
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(event.target)
+  console.log(event.target.id)
+  console.log(event.target.parentNode.id)
   api.editDive(data)
     .then(api.showDive)
     .then(ui.showDiveSuccess)
@@ -35,12 +41,7 @@ const onEditDives = function (event) {
 const onDeleteDives = function (event) {
   console.log('onDeleteDives')
   event.preventDefault()
-  console.log(event)
-  // console.log($(event.target))
-  // console.log($(event.target).closest('tr'))
-  // console.log($(event.target).closest('tr').find('#id'))
-  const diveId = $(event.target).closest('tr').find('#id').text()
-  console.log(diveId)
+
   api.deleteDive(diveId)
     .then(ui.deleteDiveSuccess)
     .catch(ui.Fail)

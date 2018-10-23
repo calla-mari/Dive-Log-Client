@@ -47,6 +47,7 @@ const editDive = function (userData) {
 }
 
 const deleteDive = function (diveId) {
+  console.log(diveId)
   return $.ajax({
     url: config.apiUrl + `/divelogs/${diveId}`,
     headers: {
