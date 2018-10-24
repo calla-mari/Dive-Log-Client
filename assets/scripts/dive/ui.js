@@ -21,12 +21,12 @@ const newDiveSuccess = function (diveLog) {
   $('#addDiveForm').trigger('reset')
   $('#addDiveModal').modal('toggle')
   // you are overwriting your data Incorrectly
-  if (!store.user.diveLogs) {
-    store.user.diveLogs = []
-  }
-  store.user.diveLogs.push(diveLog.divelog)
-  const showDivesHtml = showDivesTemplate({divelogs: store.user.diveLogs})
-  $('.content').html(showDivesHtml)
+//   if (!store.user.diveLogs) {
+//     store.user.diveLogs = []
+//   }
+//   store.user.diveLogs.push(diveLog.divelog)
+//   const showDivesHtml = showDivesTemplate({divelogs: store.user.diveLogs})
+//   $('.content').html(showDivesHtml)
 }
 
 const editDiveSuccess = () => {
@@ -36,7 +36,7 @@ const editDiveSuccess = () => {
   $('#editDiveModal').modal('toggle')
 }
 
-const deleteDiveSuccess = function () {
+const deleteDiveSuccess = function (diveLog) {
   $('#diveMessage').html('Sucessfully deleted the dive')
   $('#diveMessage').css('color', 'rgb(28, 173, 228)')
   $('#diveMessage').removeClass('hidden')

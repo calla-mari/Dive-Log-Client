@@ -57,6 +57,7 @@ const passChangeSuccess = function () {
   $('#passChange-form').addClass('hidden')
   $('#cancel').addClass('hidden')
   $('.dives').removeClass('hidden')
+  $('.container').removeClass('hidden')
 }
 
 const passChangeFail = function () {
