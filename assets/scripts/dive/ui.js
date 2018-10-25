@@ -3,14 +3,21 @@
 const store = require('../store.js')
 const showDivesTemplate = require('../templates/helpers/dive-list.handlebars')
 
-const showDiveSuccess = function (diveLog) {
-  const dives = diveLog.divelogs.filter(n => n.editable)
+const showDiveSuccess = function (response) {
+  $('.content').removeClass('hidden')
+  const dives = response.divelogs.filter(n => n.editable)
   const showDivesHtml = showDivesTemplate({ divelogs: dives })
   $('.content').html(showDivesHtml)
   store.diveLogs = dives
-  $('#diveMessage').html('Here are all your Dives!')
-  $('#diveMessage').css('color', 'rgb(28, 173, 228)')
-  $('#diveMessage').removeClass('hidden')
+  if (dives.length === 0) {
+    $('#diveMessage').html('You have no dives logged!')
+    $('#diveMessage').css('color', 'rgb(28, 173, 228)')
+    $('#diveMessage').removeClass('hidden')
+  } else {
+    $('#diveMessage').html('Here are all your Dives!')
+    $('#diveMessage').css('color', 'rgb(28, 173, 228)')
+    $('#diveMessage').removeClass('hidden')
+  }
 }
 
 const newDiveSuccess = function (diveLog) {
@@ -20,6 +27,7 @@ const newDiveSuccess = function (diveLog) {
   $('#diveMessage').removeClass('hidden')
   $('#addDiveForm').trigger('reset')
   $('#addDiveModal').modal('toggle')
+  $('.content').removeClass('hidden')
   // you are overwriting your data Incorrectly
 //   if (!store.user.diveLogs) {
 //     store.user.diveLogs = []
@@ -34,12 +42,14 @@ const editDiveSuccess = () => {
   $('#diveMessage').css('color', 'rgb(28, 173, 228)')
   $('#diveMessage').removeClass('hidden')
   $('#editDiveModal').modal('toggle')
+  $('.content').removeClass('hidden')
 }
 
 const deleteDiveSuccess = function (diveLog) {
   $('#diveMessage').html('Sucessfully deleted the dive')
   $('#diveMessage').css('color', 'rgb(28, 173, 228)')
   $('#diveMessage').removeClass('hidden')
+  $('.content').removeClass('hidden')
 }
 
 const Fail = function () {

@@ -41,7 +41,9 @@ $(() => {
     $('#cancel').removeClass('hidden')
     $('#display-message').addClass('hidden')
     $('.dives').addClass('hidden')
-    $('.container').addClass('hidden')
+    $('#header').addClass('hidden')
+    $('.content').addClass('hidden')
+    $('#diveMessage').addClass('hidden')
   })
   $('#cancel').on('click', authEvents, () => {
     $('#passChange-form').addClass('hidden')
@@ -52,7 +54,8 @@ $(() => {
     $('#display-message').css('color', 'red')
     $('#display-message').removeClass('hidden')
     $('.dives').removeClass('hidden')
-    $('.container').removeClass('hidden')
+    $('#header').removeClass('hidden')
+    $('#diveMessage').addClass('hidden')
   })
   $('#logOut').on('click', authEvents.onLogOut)
   $('#logOut').on('click', authEvents, () => {
@@ -60,6 +63,8 @@ $(() => {
     $('.dives').addClass('hidden')
     $('#editDiveForm').trigger('reset')
     $('#addDiveForm').trigger('reset')
+    $('#header').addClass('hidden')
+    $('.content').addClass('hidden')
   })
   // User input
   $('#allDives').on('click', diveEvents.onShowDives)
