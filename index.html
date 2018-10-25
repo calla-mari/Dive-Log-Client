@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <title>DiveLog</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <img class="large mask" src="https://i.imgur.com/M7tKC63.png" alt="Mask and Fins">
+      <h1>Dive Log Application</h1>
+      <br />
+      <form id="sign-up-form" class="hidden">
+        <legend>Please sign up below</legend>
+        <input required type="email" name="credentials[email]" placeholder="Email" />
+        <input required type="password" name="credentials[password]" placeholder="Password" />
+        <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"/>
+        <input type="submit" class="btn btn-default" value="Register" />
+      </form>
+      <p id="account" class="hidden existingAcct">Already have an account?  Log in and start logging your dives!</p>
+      <button id="logIn" class="btn btn-default hidden existingAcct user"> Back to Log In </button>
+      <br />
+      <form id="sign-in-form">
+        <legend id="1stStep">Please sign in below </legend>
+        <legned class="hidden" id="2ndStep">Thanks for signing up! Please log in logging your dives!</legned>
+        <input required type="email" name="credentials[email]" placeholder="Email" />
+        <input required type="password" name="credentials[password]" placeholder="Password" />
+        <input type="submit" class="btn btn-default" value="Sign In" />
+        <br />
+      </form>
+      <p class="newAccount">New User? Please sign up</p>
+      <button class="btn btn-default newAccount user"> Create Account </button>
+      <br />
+      <p id="display-message" class="hidden"></p>
+      <form id="passChange-form" class="hidden">
+        <legend>Change your password</legend>
+        <input required type="password" name="passwords[old]" placeholder="Old Password" />
+        <input required type="password" name="passwords[new]" placeholder="New Password" />
+        <input type="submit" class="btn btn-default user" value="Change Password" />
+      </form>
+      <button id="cancel" class="btn btn-default hidden"> Cancel </button>
+      <br />
+      <button id="changePass" class="hidden btn btn-default user"> Change Password </button>
+      <!-- <button id="mainMenu" class="hidden btn btn-default user"> Main Menu </button> -->
+      <button id="logOut" class="hidden btn btn-default"> Log Out </button>
+      <br />
+      <p id="display-alert" class="hidden"></p>
+      <br />
+      <div class="container">
+      <div class="container col-lg-6">
+        <div class="table-wrapper">
+          <div class="table-title">
+            <div id="header" class="row hidden">
+              <div class="col-sm-6">
+                <h2>Manage <b>Dives</b></h2>
+              </div>
+              <div class="col-sm-6">
+                <a href="#addDiveModal" class="btn btn-default dives" id="newDives" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Log a Dive</span></a>
+                <a href="#allDiveModal" class="btn btn-default user" id="allDives" data-toggle="modal"><span>Show all Dives</span></a>
+              </div>
+              <div>
+                <h3 id="diveMessage" class="hidden"></h3>
+              </div>
+            </div>
+          </div>
+        <div class="content hidden">
+          <!-- <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>City</th>
+                <th>Country</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="content">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <a href="#editDiveModal" class="edit crudIcon" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                  <a href="#deleteDiveModal" class="delete crudIcon" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table> -->
+        <!-- <div class="clearfix">
+          <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+            <ul class="pagination">
+              <li class="page-item disabled"><a href="#">Previous</a></li>
+              <li class="page-item"><a href="#" class="page-link">1</a></li>
+              <li class="page-item"><a href="#" class="page-link">2</a></li>
+              <li class="page-item active"><a href="#" class="page-link">3</a></li>
+              <li class="page-item"><a href="#" class="page-link">4</a></li>
+              <li class="page-item"><a href="#" class="page-link">5</a></li>
+              <li class="page-item"><a href="#" class="page-link">Next</a></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+      <!-- Edit Modal HTML -->
+      <div id="addDiveModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form id="addDiveForm">
+              <div class="modal-header">
+                <h4 class="modal-title">Add Dive</h4>
+                <button type="button" class="close cancel" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" name="divelog[city]" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Country</label>
+                  <input type="text" name="divelog[country]" class="form-control" required>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input type="button" class="btn btn-default cancel" data-dismiss="modal" value="Cancel">
+                <input type="submit" class="btn btn-info" value="Save">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Edit Modal HTML -->
+      <div id="editDiveModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form id="editDiveForm">
+              <div class="modal-header">
+                <h4 class="modal-title">Edit Dive</h4>
+                <button type="button" class="close cancel" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label>Id</label>
+                  <input type="text" name="divelog[id]" class="form-control" required>
+                </div>
+                <section>
+                  <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="divelog[city]" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" name="divelog[country]" class="form-control" required>
+                  </div>
+              </section>
+              </div>
+              <div class="modal-footer">
+                <input type="button" class="btn btn-default cancel" data-dismiss="modal" value="Cancel">
+                <input type="submit" class="btn btn-info edit" value="Save">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Delete Modal HTML -->
+      <div id="deleteDiveModal" class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <form id="deleteDiveForm">
+              <div class="modal-header">
+                <h4 class="modal-title">Delete Dive</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>Are you sure you want to delete A Dive?</p>
+                <div class="form-group">
+                  <label>Id</label>
+                  <input type="text" name="divelog[id]" class="form-control" required>
+                </div>
+                <p class="text-warning"><small>This action cannot be undone.</small></p>
+              </div>
+              <div class="modal-footer">
+                <input type="button" class="btn btn-default cancel" data-dismiss="modal" value="Cancel">
+                <input type="submit" class="btn btn-danger" value="Delete">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br />
+    </body>
+</html>
