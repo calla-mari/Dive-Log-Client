@@ -1,11 +1,14 @@
 
   <div>
-      <table class="table table-striped table-hover">
+      <table id="diveTable" class="table table-striped table-hover">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>City</th>
-            <th>Country</th>
+            <th>ID<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th>City<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th>Country<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th>Site<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th>Date<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
+            <th>Bottom Time<i class="fa fa-sort float-right" aria-hidden="true"></i></th>
             <th></th>
           </tr>
         </thead>
@@ -17,6 +20,9 @@
                 <td id="{{divelog.id}}">{{divelog.id}}</td>
                 <td id="city">{{divelog.city}}</td>
                 <td id="country">{{divelog.country}}</td>
+                <td id="site">{{divelog.site}}</td>
+                <td id="date">{{divelog.date}}</td>
+                <td id="time">{{divelog.time}}</td>
                 <td>
                   <a href="#editDiveModal" class="edit crudIcon" id="edit-{{divelog.id}}" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                   <a class="delete crudIcon btn" id="delete-{{divelog.id}}" data-id="{{divelog.id}}"><i class="material-icons" data-toggle="tooltip" title="Delete" style="color:rgb(28, 173, 228);">&#xE872;</i></a>

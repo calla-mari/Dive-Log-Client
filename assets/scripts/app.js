@@ -58,6 +58,8 @@ $(() => {
   $('#logOut').on('click', authEvents, () => {
     $('#passChange-form').trigger('reset')
     $('.dives').addClass('hidden')
+    $('#editDiveForm').trigger('reset')
+    $('#addDiveForm').trigger('reset')
   })
   // User input
   $('#allDives').on('click', diveEvents.onShowDives)
@@ -84,4 +86,13 @@ $(() => {
     $('#diveMessage').addClass('hidden')
     $('#display-message').addClass('hidden')
   })
+  $('.cancel').on('click', authEvents, () => {
+    $('#editDiveForm').trigger('reset')
+    $('#addDiveForm').trigger('reset')
+  })
+  (function ($) {
+    $(document).ready(function () {
+      $('#diveTable').DataTable()
+    })
+  })(jQuery)
 })

@@ -7,6 +7,7 @@ const showDiveSuccess = function (diveLog) {
   const dives = diveLog.divelogs.filter(n => n.editable)
   const showDivesHtml = showDivesTemplate({ divelogs: dives })
   $('.content').html(showDivesHtml)
+  console.log(dives)
   store.diveLogs = dives
   $('#diveMessage').html('Here are all your Dives!')
   $('#diveMessage').css('color', 'rgb(28, 173, 228)')
