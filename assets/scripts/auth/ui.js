@@ -6,6 +6,8 @@ const api = require('./api.js')
 const signInSuccess = function (response) {
   $('#display-message').html('Welcome! Please choose what you would like to do.')
   $('#display-message').css('color', 'rgb(28, 173, 228)')
+  +++++++
+
   $('#display-message').removeClass('hidden')
   $('#sign-in-form').trigger('reset')
   store.user = response.user
