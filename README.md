@@ -1,4 +1,4 @@
-[![Mask and Fins](https://imgur.com/a/kj6EFLA)]
+[![Mask and Fins](https://imgur.com/a/kj6EFLA)](https://calla-mari.github.io/Dive-Log-Client/)
 
 # Dive Log Application Client
 

@@ -9,9 +9,16 @@ const showDiveSuccess = function (diveLog) {
   $('.content').html(showDivesHtml)
   console.log(dives)
   store.diveLogs = dives
-  $('#diveMessage').html('Here are all your Dives!')
-  $('#diveMessage').css('color', 'rgb(28, 173, 228)')
-  $('#diveMessage').removeClass('hidden')
+  if (dives.length === 0) {
+    $('#diveMessage').html('You have no dives logged!')
+    $('#diveMessage').css('color', 'rgb(28, 173, 228)')
+    $('#diveMessage').removeClass('hidden')
+  } else {
+    $('#diveMessage').html('Here are all your Dives!')
+    $('#diveMessage').css('color', 'rgb(28, 173, 228)')
+    $('#diveMessage').removeClass('hidden')
+  }
+  console.log(dives.date)
 }
 
 const newDiveSuccess = function (diveLog) {
