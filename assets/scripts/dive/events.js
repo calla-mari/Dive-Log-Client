@@ -26,8 +26,9 @@ const onNewDives = function (event) {
 
 const onEditDives = function (event) {
   event.preventDefault()
+  const diveId = $(event.target).closest('tr').data('id')
   const data = getFormFields(event.target)
-  api.editDive(data)
+  api.editDive(diveId, data)
     .then(api.showDive)
     .then(ui.showDiveSuccess)
     .then(ui.editDiveSuccess)

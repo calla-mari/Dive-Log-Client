@@ -63,8 +63,11 @@ $(() => {
     $('.dives').addClass('hidden')
     $('#editDiveForm').trigger('reset')
     $('#addDiveForm').trigger('reset')
+<<<<<<< HEAD
     $('#header').addClass('hidden')
     $('.content').addClass('hidden')
+=======
+>>>>>>> v2
   })
   // User input
   $('#allDives').on('click', diveEvents.onShowDives)
@@ -95,4 +98,12 @@ $(() => {
     $('#editDiveForm').trigger('reset')
     $('#addDiveForm').trigger('reset')
   })
+<<<<<<< HEAD
+=======
+  (function ($) {
+    $(document).ready(function () {
+      $('#diveTable').DataTable()
+    })
+  })(jQuery)
+>>>>>>> v2
 })

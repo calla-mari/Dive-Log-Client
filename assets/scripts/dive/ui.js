@@ -8,6 +8,7 @@ const showDiveSuccess = function (response) {
   const dives = response.divelogs.filter(n => n.editable)
   const showDivesHtml = showDivesTemplate({ divelogs: dives })
   $('.content').html(showDivesHtml)
+  console.log(dives)
   store.diveLogs = dives
   if (dives.length === 0) {
     $('#diveMessage').html('You have no dives logged!')
@@ -18,6 +19,10 @@ const showDiveSuccess = function (response) {
     $('#diveMessage').css('color', 'rgb(28, 173, 228)')
     $('#diveMessage').removeClass('hidden')
   }
+<<<<<<< HEAD
+=======
+  console.log(dives.date)
+>>>>>>> v2
 }
 
 const newDiveSuccess = function (diveLog) {
@@ -29,12 +34,21 @@ const newDiveSuccess = function (diveLog) {
   $('#addDiveModal').modal('toggle')
   $('.content').removeClass('hidden')
   // you are overwriting your data Incorrectly
+<<<<<<< HEAD
 //   if (!store.user.diveLogs) {
 //     store.user.diveLogs = []
 //   }
 //   store.user.diveLogs.push(diveLog.divelog)
 //   const showDivesHtml = showDivesTemplate({divelogs: store.user.diveLogs})
 //   $('.content').html(showDivesHtml)
+=======
+  if (!store.user.diveLogs) {
+    store.user.diveLogs = []
+  }
+  store.user.diveLogs.push(diveLog.divelog)
+  const showDivesHtml = showDivesTemplate({divelogs: store.user.diveLogs})
+  $('.content').html(showDivesHtml)
+>>>>>>> v2
 }
 
 const editDiveSuccess = () => {

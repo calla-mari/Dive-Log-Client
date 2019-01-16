@@ -13,12 +13,21 @@
 .small {
   display: block;
   width: 200px;
+  float: left;
+}
+
+.top {
+  float: right;
+}
+h1 {
+  clear: both;
 }
 
 .table {
   display: block;
   margin: 50px auto;
   float: none;
+  text-align: center;
 }
 
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
